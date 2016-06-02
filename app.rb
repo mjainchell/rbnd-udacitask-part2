@@ -2,6 +2,7 @@ require 'bundler/setup'
 require 'chronic'
 require 'colorize'
 # Find a third gem of your choice and add it to your project
+require 'terminal-table'
 require 'date'
 require_relative "lib/listable"
 require_relative "lib/errors"
@@ -37,7 +38,7 @@ list.all
 # ----------------------------
 # new_list.add("image", "http://ruby-doc.org") # Throws InvalidItemType error  --WORKING--
 # new_list.delete(9) # Throws an IndexExceedsListSize error --WORKING--
-# new_list.add("todo", "Hack some portals", priority: "super high") # throws an InvalidPriorityValue error
+# new_list.add("ttodo", "Hack some portals", priority: "super high") # throws an InvalidPriorityValue error --WORKING-- (Added extra "t" after checking functionality, remove "t" to verify.)
 
 # DISPLAY UNTITLED LIST
 # ---------------------
