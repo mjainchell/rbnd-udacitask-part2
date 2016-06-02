@@ -41,13 +41,17 @@ class UdaciList
       raise UdaciListErrors::IndexExceedsListSize, "Index Exceeds List Size"
     end
   end
-
+  
   def all
-    puts "-" * @title.length
-    puts @title
-    puts "-" * @title.length
+    rows = []
+    rows << ["*" * @title.length]
+    rows << [@title]
+    rows << ["-" * @title.length]
     @items.each_with_index do |item, position|
-      puts "#{position + 1}) #{item.details}"
+      rows << ["#{position + 1} #{item.details}"]
     end
+    table = Terminal::Table.new :rows => rows
+    puts table
   end
+
 end
