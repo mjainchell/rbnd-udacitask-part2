@@ -2,6 +2,7 @@
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
     I used the Terminal Table GEM, so the lists appear in boxes generated using this gem.
+    I also used Artii for the list titles, and colorize for to change the colors of some of the output more than required.
 2. Describe the 2 features you added to the project.
   a) Feature 1...
     I added a new method (colorizer) to color code the item types in the lists.
