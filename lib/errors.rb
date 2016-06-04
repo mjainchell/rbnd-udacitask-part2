@@ -9,4 +9,7 @@ module UdaciListErrors
   class InvalidPriorityValue < StandardError
   end
 
+  class NoneOfThatType < StandardError
+  end
+
 end

@@ -41,17 +41,73 @@ class UdaciList
       raise UdaciListErrors::IndexExceedsListSize, "Index Exceeds List Size"
     end
   end
-  
+
+  def filter(item_type)
+
+    if item_type == "event"
+      items = @items.select do |item|
+        item.instance_of?(EventItem)
+        end
+      elsif item_type == "todo"
+        items = @items.select do |item|
+          item.instance_of?(TodoItem)
+          end
+      elsif item_type == "link"
+        items = @items.select do |item|
+          item.instance_of?(LinkItem)
+          end
+      else
+        raise UdaciListErrors::NoneOfThatType, "No Items of That Type"
+    end
+    title1 = Artii::Base.new :font => 'slant'
+    rows2 = []
+    rows2 << ["*".colorize(:blue) * @title.length * 5]
+    rows2 << [title1.asciify(@title)]
+    rows2 << ["-".colorize(:blue) * @title.length * 5]
+    items.each_with_index do |item, position|
+      rows2 << ["#{position + 1} #{colorizer(item)} #{item.details}"]
+    end
+    table2 = Terminal::Table.new :rows => rows2
+    puts table2
+
+  end
+
+  # NEW FEATURE colorizer method color codes the item types
+
+  def colorizer(item)
+    if item.instance_of?(TodoItem)
+        item.type.colorize(:yellow)
+      elsif item.instance_of?(EventItem)
+        item.type.colorize(:green)
+      elsif item.instance_of?(LinkItem)
+        item.type.colorize(:red)
+      else
+        item.type.colorize(:black)
+    end
+  end
+
+  # NEW FEATURE Artii is used to asciify the list titles
+
+
   def all
+    title2 = Artii::Base.new :font => 'slant'
     rows = []
-    rows << ["*" * @title.length]
-    rows << [@title]
-    rows << ["-" * @title.length]
+    rows << ["*".colorize(:blue) * @title.length * 5]
+    rows << [title2.asciify(@title)]
+
+    rows << ["-".colorize(:blue) * @title.length * 5]
     @items.each_with_index do |item, position|
-      rows << ["#{position + 1} #{item.details}"]
+    rows << ["#{position + 1} #{colorizer(item)} #{item.details}"]
     end
     table = Terminal::Table.new :rows => rows
     puts table
+
   end
 
+
 end
+
+
+
+
+

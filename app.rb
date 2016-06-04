@@ -1,6 +1,7 @@
 require 'bundler/setup'
 require 'chronic'
 require 'colorize'
+require 'artii'
 # Find a third gem of your choice and add it to your project
 require 'terminal-table'
 require 'date'
@@ -46,9 +47,5 @@ list.all
 
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
-# new_list.filter("event")
-
-
-
-# testing DELETE THIS AFTER COMPLETE
+ new_list.filter("event")
 
