@@ -1,13 +1,21 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+    I used the Terminal Table GEM, so the lists appear in boxes generated using this gem.
 2. Describe the 2 features you added to the project.
   a) Feature 1...
+    I added a new method (colorizer) to color code the item types in the lists.
   b) Feature 2...
+    I added code to asciify the list titles.
 
 # REFLECTIONS
 # -------------------------------------------------------
 1. How long did you spend working on this project?
+    I estimate that I spent around 9 hours working on this project.
 2. What was the most rewarding challenge you conquered?
+    The most rewarding challenge was learning how to filter the item types.
 3. What two additional features did you build? Why?
+    I added a method to color code the item types in the lists, becuase color coding makes reading a list easier in my opinion.
+    I added code to asciify the list titles, because I think the lists look better when the titles stand out.
 4. Where do you still have room to grow?
+    Learning and becoming more comfortable with ruby syntax and how to use various coding strategies more effectively.
